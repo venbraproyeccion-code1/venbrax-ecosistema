@@ -1,0 +1,22 @@
+{
+  "name": "venbrax-platform",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace @venbrax/web",
+    "dev:api": "npm run start:dev --workspace @venbrax/api",
+    "build:web": "npm run build --workspace @venbrax/web",
+    "build:api": "npm run build --workspace @venbrax/api",
+    "manual:screens": "node scripts/capture-manual-screenshots.mjs",
+    "manual:pdf": "python scripts/build-manual-pdf.py",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1"
+  }
+}

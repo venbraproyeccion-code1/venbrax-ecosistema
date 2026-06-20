@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: venbrax-api
+    env: node
+    plan: free
+    rootDir: apps/api
+    buildCommand: npm install && npm run build
+    startCommand: node dist/main.js
+    envVars:
+      - key: PORT
+        value: 3001
+  - type: static
+    name: venbrax-web
+    rootDir: apps/web
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
