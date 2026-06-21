@@ -9,8 +9,9 @@ services:
     envVars:
       - key: PORT
         value: 3001
-  - type: static
+  - type: web
     name: venbrax-web
+    env: static
     rootDir: apps/web
     buildCommand: npm install && npm run build
     staticPublishPath: dist
